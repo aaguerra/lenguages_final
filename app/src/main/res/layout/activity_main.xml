@@ -7,21 +7,17 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.yachai.reto.prueba1.MainActivity">
+    tools:context=".activities.MainActivity">
 
-    <ImageView
-        android:layout_width="500px"
-        android:layout_height="500px"
-        android:id="@+id/imageView"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="camera"
-        android:id="@+id/button"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="86dp" />
+    <fragment android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.yachai.reto.prueba1.fragments.Fragment_boton"
+        android:layout_centerVertical="true"
+        tools:layout="@layout/fragment_boton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
