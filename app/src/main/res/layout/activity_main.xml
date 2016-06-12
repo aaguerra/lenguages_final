@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".activities.MainActivity">
 
-<<<<<<< HEAD
+
     <ImageView
         android:layout_width="500px"
         android:layout_height="500px"
@@ -40,17 +40,13 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView_coordenadas"
         android:layout_below="@+id/button_posicion"
-=======
+        />
     <fragment android:id="@+id/fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:name="com.yachai.reto.prueba1.fragments.Fragment_boton"
         android:layout_centerVertical="true"
         tools:layout="@layout/fragment_boton"
->>>>>>> 630727a79649f5abef5a7ebdb302b490bbcb5017
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+
 
 </RelativeLayout>
