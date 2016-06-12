@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.facebook.FacebookSdk;
 
 public class MainActivity extends AppCompatActivity {
 
