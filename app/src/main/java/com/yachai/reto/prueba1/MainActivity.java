@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());   // Initialize the SDK before executing any other operations
+
+
         setContentView(R.layout.activity_main);
 
         b1 = (Button) findViewById(R.id.button);
