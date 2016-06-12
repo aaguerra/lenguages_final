@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Prueba1</string>
+    <string name="title_activity_activity_fragment">ActivityFragment</string>
+    <string name="fragment_boton.boton">Tomar Foto</string>
 </resources>
