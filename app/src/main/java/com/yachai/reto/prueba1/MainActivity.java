@@ -20,8 +20,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
+
+    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
+    private static final String TWITTER_KEY = "	vVloTvRDJ1V1CzB8VQrjIpHKA";
+    private static final String TWITTER_SECRET = "nyNIrmlDR2ubxILXLYiLw1ciE7v19Cki67tTx6sy5UYcDw4ZN4";
+
 
     public LocationListener mLocationListener;
     Button b1, b;
@@ -34,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        Fabric.with(this, new Twitter(authConfig));
         FacebookSdk.sdkInitialize(getApplicationContext());   // Initialize the SDK before executing any other operations
 
 
