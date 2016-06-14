@@ -22,7 +22,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     public LocationListener mLocationListener;
-    Button b1, b;
+    Button botonFoto, botonPosicion;
     ImageView iv;
     public TextView coordenadas;
     public LocationManager mLocationManager;
@@ -33,12 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        b1 = (Button) findViewById(R.id.button);
+        botonFoto = (Button) findViewById(R.id.buttonFoto);
         iv = (ImageView) findViewById(R.id.imageView);
         coordenadas = (TextView) findViewById(R.id.textView_coordenadas);
-        b = (Button) findViewById(R.id.button_posicion);
+        botonPosicion = (Button) findViewById(R.id.button_posicion);
 
-        b1.setOnClickListener(new View.OnClickListener() {
+        botonFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onProviderDisabled(String s) {
-
                 Intent i = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 startActivity(i);
             }
@@ -134,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         }
         System.out.println("-----------1");
         // this code won't execute IF permissions are not allowed, because in the line above there is return statement.
-        b.setOnClickListener(new View.OnClickListener() {
+        botonPosicion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //noinspection MissingPermission
