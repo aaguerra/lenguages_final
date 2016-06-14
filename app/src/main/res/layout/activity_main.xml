@@ -10,17 +10,17 @@
     tools:context=".MainActivity">
 
 
-    <ImageView
+    <ImageView android:id="@+id/imageView"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:id="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
     <Button android:id="@+id/buttonFoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="takePicture"
         android:text="@string/fragment_boton.boton.tomarfoto"
-        android:layout_below="@+id/imageView"
+        android:layout_above="@+id/botonCompartir"
         android:layout_centerHorizontal="true" />
 
     <Button android:id="@+id/button_posicion"
@@ -28,19 +28,28 @@
         android:layout_height="wrap_content"
         android:text="@string/activity.main.textview.posicion"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/buttonFoto"
-        android:layout_alignStart="@+id/buttonFoto" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView_coordenadas"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_above="@+id/buttonFoto"
+        android:layout_toStartOf="@+id/botonCompartir"
+        android:layout_below="@+id/imageView"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView" />
+
+    <Button android:id="@+id/botonCompartir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity.main.button.compartir"
         android:layout_alignTop="@+id/button_posicion"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/button_posicion"
-        android:layout_toStartOf="@+id/button_posicion"
-        android:layout_alignBottom="@+id/button_posicion" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

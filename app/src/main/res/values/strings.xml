@@ -3,4 +3,6 @@
     <string name="title_activity_activity_fragment">ActivityFragment</string>
     <string name="fragment_boton.boton.tomarfoto">TAKE</string>
     <string name="activity.main.textview.posicion">Posicion</string>
+    <string name="activity.main.button.compartir">Compartir</string>
+    <string name="send_to">Facebook</string>
 </resources>

@@ -8,43 +8,56 @@ import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
     public LocationListener mLocationListener;
-    Button botonFoto, botonPosicion;
-    ImageView iv;
+    Button botonFoto, botonPosicion,botonCompartir;
+    ImageView cuadroImagen;
     public TextView coordenadas;
     public LocationManager mLocationManager;
-
+    Uri file;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
 
+        setContentView(R.layout.activity_main);
         botonFoto = (Button) findViewById(R.id.buttonFoto);
-        iv = (ImageView) findViewById(R.id.imageView);
+        cuadroImagen = (ImageView) findViewById(R.id.imageView);
         coordenadas = (TextView) findViewById(R.id.textView_coordenadas);
         botonPosicion = (Button) findViewById(R.id.button_posicion);
+        botonCompartir=(Button)findViewById(R.id.botonCompartir);
 
-        botonFoto.setOnClickListener(new View.OnClickListener() {
+        botonCompartir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, 0);
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_STREAM, file);
+                sendIntent.setType("image/jpeg");
+                startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.send_to)));
             }
         });
+
 
         mLocationManager = (LocationManager)
                 getSystemService(Context.LOCATION_SERVICE);
@@ -111,6 +124,41 @@ public class MainActivity extends AppCompatActivity {
     }
     }
      */
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        cuadroImagen.setImageURI(file);
+        /*
+        *  Bitmap bp = (Bitmap) data.getExtras().get("data");
+        iv.setImageBitmap(bp);*/
+
+    }
+
+
+    public void takePicture(View view) {
+        Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        file = Uri.fromFile(getOutputMediaFile());
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, file);
+        startActivityForResult(intent, 0);
+    }
+
+    private static File getOutputMediaFile(){
+        File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES), "Green App");
+
+        if (!mediaStorageDir.exists()){
+            if (!mediaStorageDir.mkdirs()){
+                Log.d("Green App", "erro al crear el directorio");
+                return null;
+            }
+        }
+
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        return new File(mediaStorageDir.getPath() + File.separator +
+                "IMG_"+ timeStamp + ".jpg");
+    }
+
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
