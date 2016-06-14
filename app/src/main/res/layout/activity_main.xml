@@ -42,14 +42,4 @@
         android:layout_below="@+id/button_posicion"
         />
 
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignBaseline="@+id/textView_coordenadas"
-        android:layout_alignBottom="@+id/textView_coordenadas"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
 </RelativeLayout>
