@@ -5,6 +5,7 @@
     <string name="activity.main.textview.posicion">Posicion</string>
     <string name="activity.main.button.compartir">Compartir</string>
     <string name="send_to">Facebook</string>
-    <string name="title_activity_main2">Principal</string>
+    <string name="title_activity_main2">Green App</string>
     <string name="title_activity_main1">Mapa</string>
+    <string name="actionBar.tittle">Compartir</string>
 </resources>

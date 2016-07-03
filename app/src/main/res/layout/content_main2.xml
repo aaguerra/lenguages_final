@@ -22,8 +22,9 @@
         android:layout_height="wrap_content"
         android:onClick="takePicture"
         android:text="@string/fragment_boton.boton.tomarfoto"
-        android:layout_above="@+id/botonCompartir"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/button_posicion"
+        android:layout_toRightOf="@+id/button_posicion"
+        android:layout_toEndOf="@+id/button_posicion" />
 
     <Button android:id="@+id/button_posicion"
         android:layout_width="wrap_content"
@@ -46,14 +47,6 @@
         android:layout_below="@+id/imageView"
         android:layout_alignRight="@+id/imageView"
         android:layout_alignEnd="@+id/imageView" />
-
-    <Button android:id="@+id/botonCompartir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/activity.main.button.compartir"
-        android:layout_alignTop="@+id/button_posicion"
-        android:layout_toRightOf="@+id/buttonFoto"
-        android:layout_toEndOf="@+id/buttonFoto" />
 
     <Button
         android:layout_width="wrap_content"
