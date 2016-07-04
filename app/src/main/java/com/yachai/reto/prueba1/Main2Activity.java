@@ -53,7 +53,7 @@ public class Main2Activity extends AppCompatActivity {
         cuadroImagen = (ImageView) findViewById(R.id.imageView);
         coordenadas = (TextView) findViewById(R.id.textView_coordenadas);
         botonPosicion = (Button) findViewById(R.id.button_posicion);
-        botonCompartir=(Button)findViewById(R.id.botonCompartir);
+       // botonCompartir=(Button)findViewById(R.id.botonCompartir);
         botonMapa=(Button)findViewById(R.id.boton_mapa);
 
         botonMapa.setOnClickListener(new View.OnClickListener() {
@@ -108,14 +108,14 @@ public class Main2Activity extends AppCompatActivity {
 
         configure_button();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
     }
     /**
      * @return the last know best location
