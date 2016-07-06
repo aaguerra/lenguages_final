@@ -27,16 +27,21 @@ public class Intro extends Activity {
         intro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Context context = getApplicationContext();
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast;
                 if (isEmpty(usuario) || isEmpty(clave) || isEmpty(email))
                 {
-                    Context context = getApplicationContext();
                     CharSequence text = "No ingreso todos datos";
-                    int duration = Toast.LENGTH_SHORT;
-
-                    Toast toast = Toast.makeText(context, text, duration);
+                    toast = Toast.makeText(context, text, duration);
                     toast.show();
-                }else
+                }else if (!isEmail(email))
+                {
+                    CharSequence text = "No es email";
+                    toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
+                else
                 {
                     Intent intent=new Intent(Intro.this,Main2Activity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -50,4 +55,20 @@ public class Intro extends Activity {
     private boolean isEmpty(EditText etText) {
         return etText.getText().toString().trim().length() == 0;
     }
+
+    private boolean isEmail(EditText etText) {
+        String srt=etText.getText().toString();
+        for (char legra:srt.toCharArray()) {
+            if(legra=='@')
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
 }
+
