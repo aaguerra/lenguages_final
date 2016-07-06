@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.location.Location;
@@ -66,6 +67,7 @@ public class Main2Activity extends AppCompatActivity {
 
                     //  Launch app intro
                     Intent i = new Intent(Main2Activity.this, Intro.class);
+
                     startActivity(i);
 
                     //  Make a new preferences editor
