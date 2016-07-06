@@ -37,8 +37,8 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main1"></activity>
-        <activity android:name=".Intro"></activity>
+            android:label="@string/title_activity_main1" />
+        <activity android:name=".Intro" />
     </application>
 
 </manifest>

@@ -8,4 +8,9 @@
     <string name="title_activity_main2">Green App</string>
     <string name="title_activity_main1">Mapa</string>
     <string name="actionBar.tittle">Compartir</string>
+    <string name="intro.boton.next">NEXT</string>
+    <string name="intro.editText.name">Nombre</string>
+    <string name="intro.editText.email">Email</string>
+    <string name="intro.editText.pass">Password</string>
+    <string name="intro.textView.bienvenida">Bienvenido a Green App</string>
 </resources>

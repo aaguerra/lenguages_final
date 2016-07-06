@@ -12,8 +12,75 @@
     <Button android:id="@+id/introButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+
+        android:text="@string/intro.boton.next"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="112dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/introButton">
+
+        <EditText android:id="@+id/intro.name"
+            android:layout_width="match_parent"
+            android:inputType="textPersonName"
+            android:hint="@string/intro.editText.name"
+            android:textColorHint="@color/primary_light"
+            android:ems="20"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="83dp" />
+
+        <EditText android:id="@+id/intro.pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/intro.editText.pass"
+            android:textColorHint="@color/primary_light"
+            android:ems="20"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <EditText  android:id="@+id/intro.email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="@string/intro.editText.email"
+            android:textColorHint="@color/primary_light"
+            android:ems="20"
+            android:layout_marginTop="59dp"
+            android:layout_below="@+id/intro.pass"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/intro.textView.bienvenida"
+            android:id="@+id/textView"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textColor="@color/accent"
+            android:textColorHighlight="@android:color/primary_text_dark"
+            android:layout_centerVertical="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
 </RelativeLayout>
