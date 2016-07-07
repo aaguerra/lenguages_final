@@ -89,7 +89,7 @@ public class Main2Activity extends AppCompatActivity {
         botonFoto = (Button) findViewById(R.id.buttonFoto);
         cuadroImagen = (ImageView) findViewById(R.id.imageView);
         coordenadas = (TextView) findViewById(R.id.textView_coordenadas);
-        botonPosicion = (Button) findViewById(R.id.button_posicion);
+       // botonPosicion = (Button) findViewById(R.id.button_posicion);
        // botonCompartir=(Button)findViewById(R.id.botonCompartir);
         botonMapa=(Button)findViewById(R.id.boton_mapa);
 
@@ -268,7 +268,7 @@ public class Main2Activity extends AppCompatActivity {
         }
         System.out.println("-----------1");
         // this code won't execute IF permissions are not allowed, because in the line above there is return statement.
-        botonPosicion.setOnClickListener(new View.OnClickListener() {
+       /* botonPosicion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //noinspection MissingPermission
@@ -277,7 +277,7 @@ public class Main2Activity extends AppCompatActivity {
                 //if (null != locationGPS) { 3 = locationGPS.getTime(); }
 
             }
-        });
+        });*/
     }
 
 

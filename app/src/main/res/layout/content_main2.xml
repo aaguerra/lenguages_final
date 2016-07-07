@@ -27,14 +27,9 @@
         android:layout_height="wrap_content"
         android:onClick="takePicture"
         android:text="@string/fragment_boton.boton.tomarfoto"
-        android:layout_alignBottom="@+id/textView_coordenadas"
-        android:layout_centerHorizontal="true" />
-
-    <Button android:id="@+id/button_posicion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/activity.main.textview.posicion"
-        android:layout_alignBottom="@+id/textView_coordenadas"
+        android:layout_marginLeft="69dp"
+        android:layout_marginStart="69dp"
+        android:layout_alignTop="@+id/boton_mapa"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -43,20 +38,20 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView_coordenadas"
+        android:layout_marginBottom="48dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="56dp"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mapa"
         android:id="@+id/boton_mapa"
-        android:layout_alignTop="@+id/buttonFoto"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignBottom="@+id/textView_coordenadas"
+        android:layout_toLeftOf="@+id/textView_coordenadas"
+        android:layout_toStartOf="@+id/textView_coordenadas"
+        android:layout_marginRight="79dp"
+        android:layout_marginEnd="79dp" />
 
 </RelativeLayout>
