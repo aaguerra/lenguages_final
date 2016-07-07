@@ -28,11 +28,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public double longitud;
     public LocationListener mLocationListener;
     private GoogleMap mMap;
+    private GoogleMap googleMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_maps);
 
         mLocationManager = (LocationManager)
                 getSystemService(Context.LOCATION_SERVICE);
@@ -42,8 +45,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onLocationChanged(Location location) {
                 System.out.println("-----------casa");
-                longitud= location.getLongitude();
-                latitud = location.getLatitude();
+                longitud = location.getLongitude();
+                latitud = location.getLatitude();;
+                LatLng latLng = new LatLng(latitud , longitud);
+                mMap.addMarker(new MarkerOptions().position(latLng).title("Marker"));
+                mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
                 endGPS();
 
             }
@@ -67,14 +73,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         };
         configure_button();
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        SupportMapFragment fm =mapFragment;
 
-        System.out.println("-----------3");
     }
 
 
@@ -87,7 +91,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
             return;
         }
-        System.out.println("-----------1");
+        System.out.println("-----------1eee");
         mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, mLocationListener);
 
     }
@@ -108,9 +112,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
             mLocationManager.removeUpdates(mLocationListener);
             //lmanager=null;
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -127,12 +129,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        System.out.println("-----------2");
-        configure_button();
-        System.out.println("----------"+longitud+"    "+latitud);
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(longitud,latitud);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }
