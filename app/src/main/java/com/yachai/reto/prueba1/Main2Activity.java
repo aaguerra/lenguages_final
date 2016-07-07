@@ -97,7 +97,7 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent =
-                        new Intent(Main2Activity.this, MainActivity.class);
+                        new Intent(Main2Activity.this, MapsActivity.class);
                 startActivity(intent);
             }
         });

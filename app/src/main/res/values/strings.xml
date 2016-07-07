@@ -13,4 +13,5 @@
     <string name="intro.editText.email">Email</string>
     <string name="intro.editText.pass">Password</string>
     <string name="intro.textView.bienvenida">Bienvenido a Green App</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
